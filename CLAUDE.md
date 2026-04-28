@@ -33,6 +33,12 @@
   - データベース構造やデータの変更
 - コミットメッセージは日本語で簡潔に書く
 
+### ブランチ運用
+
+- 作業は `claude/〇〇` ブランチで行う(例: `claude/add-login-feature`)
+- `claude/**` ブランチへのプッシュは、GitHub Actions(`.github/workflows/merge-to-main.yml`)が自動的にmainへマージする
+- mainへの直接プッシュは行わない(自動マージに任せる)
+
 ## 3. 確認が必要なケース
 
 作業前にユーザーに確認すること:
