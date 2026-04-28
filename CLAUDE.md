@@ -39,6 +39,30 @@
 - `claude/**` ブランチへのプッシュは、GitHub Actions(`.github/workflows/merge-to-main.yml`)が自動的にmainへマージする
 - mainへの直接プッシュは行わない(自動マージに任せる)
 
+### プロジェクト初期チェック(セッション開始時の確認)
+
+新規プロジェクトのセッション開始時、Claude Code は以下を確認し、問題があればユーザーに案内する。
+
+1. **デフォルトブランチが main になっているか**
+   - 確認方法: `git remote show origin` の "HEAD branch" を見る
+   - 違っていたら、ユーザーに以下の手順を案内する:
+     1. リポジトリの Settings → General
+     2. Default branch セクションで矢印アイコンをクリック
+     3. main を選択して Update
+     4. 確認ダイアログで承認
+
+2. **不要な古いブランチがないか**
+   - 確認方法: `git branch -r` でリモートブランチ一覧を確認
+   - claude/** で完了済みのブランチが大量に残っていたら、整理を提案
+
+3. **GitHub Actions の書き込み権限が有効か**
+   - 自動マージワークフローが動かない場合は、Settings → Actions → General の Workflow permissions を Read and write permissions に変更するよう案内
+
+4. **CLAUDE.md・README.md が正しく読めているか**
+   - 読めていない場合は、ファイルパスを確認
+
+これらは新規プロジェクトの初回セッションだけ確認すればよい(2回目以降は不要)。
+
 ## 3. 確認が必要なケース
 
 作業前にユーザーに確認すること:
