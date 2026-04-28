@@ -1,4 +1,4 @@
-markdown# GAS プロジェクト初期セットアップ手順
+# GAS プロジェクト初期セットアップ手順
 
 このドキュメントは、Google Apps Script (GAS) プロジェクトを clasp + GitHub Actions で
 自動デプロイする環境を構築するための手順です。
