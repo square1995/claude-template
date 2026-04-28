@@ -9,6 +9,11 @@
 3. 作りたいプロジェクトの種類に応じて、Claude Code に以下のように指示する
 
 ## Claude Code への初回指示例
+# 新規プロジェクト
+
+このプロジェクトは [GAS / Firebase / Cloudflare / Node.js] を使います。
+Claude Code は対応する `setup/〇〇_SETUP.md` を読んで初期セットアップを行ってください。
+
 
 ### GAS プロジェクトの場合
 「`setup/GAS_SETUP.md` を読んで、GAS プロジェクトの初期セットアップを行ってください」
